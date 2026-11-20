@@ -1,0 +1,30 @@
+WOLVERINE - Mod de Fabric para Minecraft Java 26.3 (codigo fuente)
+
+Requisitos: JDK 25, Minecraft 26.3, Fabric Loader >= 0.19.5, Fabric API 0.160.5+26.3.
+
+COMO COMPILAR
+  1. Genera un proyecto base en https://fabricmc.net/develop/template/ (Minecraft 26.3, Mojang mappings)
+     para obtener el gradle wrapper (gradlew / gradle/wrapper).
+  2. Copia dentro de ese proyecto: src/, build.gradle, gradle.properties y settings.gradle de este zip
+     (o solo src/ si prefieres conservar tus ficheros de build).
+  3. Ejecuta ./gradlew build  -> el .jar queda en build/libs/ (usa el que NO termina en -sources).
+  4. Pon el .jar en la carpeta mods junto con Fabric API. No necesita resource pack: las texturas van dentro.
+
+OBJETOS (pestaña de Combate del creativo)
+  - Garras de adamantium: arma irrompible, 8 de dano y ataque rapido.
+      Receta: 3 lingotes de hierro arriba y 1 lingote de netherita en el centro de la fila de abajo.
+      Click derecho: furia berserker 20 s (Velocidad II, Fuerza III, Resistencia II). Enfriamiento 60 s.
+      Agachado + click derecho: sentidos (vision nocturna 15 s y brillo en seres vivos a 32 bloques). Enfriamiento 20 s.
+  - Traje: mascara, chaqueta, pantalones y botas (amarillo y azul). Pieza de cuero + tinte azul + tinte amarillo (sin forma).
+      Con la chaqueta puesta tienes factor de curacion: Regeneracion II y se limpian veneno, wither, nausea y debilidad.
+
+COMPILAR SIN INSTALAR NADA (GitHub Actions)
+  1. Crea una cuenta gratis en github.com y un repositorio nuevo (boton "New repository", ponle el nombre que quieras).
+  2. Descomprime este zip. En el repositorio pulsa "Add file > Upload files" y arrastra TODO el contenido
+     (carpeta src, build.gradle, gradle.properties, settings.gradle, .gitignore y la carpeta oculta .github).
+     Si tu sistema no te deja arrastrar .github, crea el archivo a mano: "Add file > Create new file",
+     escribe como nombre  .github/workflows/build.yml  y pega dentro el contenido de COMPILAR_GITHUB_build.yml.
+  3. Pulsa "Commit changes". Se abre solo la pestaña "Actions" y empieza a compilar (tarda unos minutos).
+  4. Cuando salga el check verde, entra en esa ejecucion y baja del apartado "Artifacts" el .zip.
+     Dentro esta el .jar: ese es el mod. Ponlo en la carpeta mods junto con Fabric API.
+  Si sale una X roja, abre el paso que fallo, copia el error y pasamelo para corregirlo.
